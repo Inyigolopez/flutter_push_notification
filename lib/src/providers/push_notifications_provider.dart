@@ -23,6 +23,8 @@ class PushNotificationProvider {
 
       //ecEpC83QuFg:APA91bGJz66fjjkGGFSuF-PxxZfz2MQUo3-vLhK4mtLiLNw6xnsByGpDWPGaizIg5U9TjYfLQh5cMin7yzgzoVFc_RJnDhNpAFp3olGow7jomX9Tzx8qmCeHjpPqgYUwwh8KMZ02ge_t
 
+      //d-ZT1cfVEkYbi3lMy46SRn:APA91bETUD4BN3h_TBmRLOviKSGQmVGzARX7NbFwYZuYpMSDnJIvsghBWJmFdZqPLHLGA-whgzVtPiVpsaf4SHgps_sEPW3lm8d65l6X7joki6FcxcYlbIcAbqUeKpOHqnKjIPi98jjS
+
     });
 
     _firebaseMessaging.configure(
@@ -34,6 +36,8 @@ class PushNotificationProvider {
         String argumento = 'no-data';
         if( Platform.isAndroid ){
           argumento = info['data']['comida'] ?? 'no-data';
+        } else {
+          argumento = info['comida'] ?? 'no-data-iOS';
         }
 
         _mensajesStreamController.sink.add(argumento);
@@ -46,6 +50,8 @@ class PushNotificationProvider {
         String argumento = 'no-data';
         if( Platform.isAndroid ){
           argumento = info['data']['comida'] ?? 'no-data';
+        } else {
+          argumento = info['comida'] ?? 'no-data-iOS';
         }
         
         _mensajesStreamController.sink.add(argumento);
@@ -58,6 +64,8 @@ class PushNotificationProvider {
         String argumento = 'no-data';
         if( Platform.isAndroid ){
           argumento = info['data']['comida'] ?? 'no-data';
+        } else {
+          argumento = info['comida'] ?? 'no-data-iOS';
         }
         
         _mensajesStreamController.sink.add(argumento);
